@@ -2,22 +2,39 @@ import std.stdio;
 import core.time;
 import midifile.midifile;
 void main() {
-	writeln("hello");
+	string midifileName = "./test.mid";
 
-	MIDIFile midifile1 = new MIDIFile("./test.mid");
+	timer("parseFile", () => parseFile(midifileName) );
+}
 
-	MonoTime before = MonoTime.currTime;
-
-	writeln(midifile1.ticksPerBeat);
-	foreach(track; midifile1.tracks){
+void parseFile(string midifileName){
+	writefln("Parsing %s", midifileName);
+	MIDIFile midifile = new MIDIFile(midifileName);
+	
+	writeln(midifile.ticksPerBeat);
+	foreach(track; midifile.tracks){
 		foreach(event; track){
 			if(event.type == MIDIEventType.NoteOn){
 				writeln(event.note.note);
 			}
 		}
 	}
+}
+
+
+void timer(string funcName, void delegate() f){
+	MonoTime before = MonoTime.currTime;
+	writefln("Starting %s", funcName);
+	f();
 
 	MonoTime after = MonoTime.currTime;
     Duration timeElapsed = after - before;
-	writeln(timeElapsed);
+	writefln("%s took %s", funcName, timeElapsed);	
 }
+
+
+
+
+
+
+
