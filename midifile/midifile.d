@@ -150,7 +150,7 @@ class MIDIFile
                         // read event
                         switch(type) with(MIDIEvents)
                         {
-                            case MIDIEvents.SequenceNumber:
+                            case SequenceNumber:
                                 {
                                     static int sequence = 0;
 
