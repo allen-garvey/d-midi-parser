@@ -1,6 +1,6 @@
 import std.stdio;
 import core.time;
-import midifile.midifile;
+import midi.midifile;
 void main() {
 	string midifileName = "./test.mid";
 
