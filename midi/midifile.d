@@ -53,7 +53,7 @@ struct MThd_Chunk
 
 struct MTrk_Chunk
 {
-    ubyte[4] id;   // 'M','T','r','k' */
+    ubyte[4] id;   // 'M','T','r','k'
     uint     length;
 }
 
