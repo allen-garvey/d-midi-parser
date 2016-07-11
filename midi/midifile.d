@@ -5,10 +5,8 @@ module midi.midifile;
 import midi.midiutil;
 import midi.mididata;
 import std.file;
-import std.string;
 import std.range;
 import std.exception;
-import std.traits;
 
 class MIDIFile{
     this(const(char)[] filename){

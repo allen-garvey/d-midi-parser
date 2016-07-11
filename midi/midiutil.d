@@ -4,10 +4,7 @@
 
 module midi.midiutil;
 
-import std.file;
-import std.string;
 import std.range;
-import std.exception;
 import std.traits;
 
 
