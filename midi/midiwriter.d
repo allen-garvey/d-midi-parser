@@ -1,6 +1,8 @@
 module midi.midiwriter;
 
 import midi.midifile;
+import midi.midiutil;
+import midi.mididata;
 
 
 void writeMidiFile(string filename, MIDIEvent[][] tracks){
