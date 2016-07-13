@@ -29,3 +29,17 @@ MThd_Chunk createMidiHeaderChunk(ushort numTracks, ushort ticksPerBeat=256){
 
     return midiHeader;
 }
+
+MTrk_Chunk createMidiTrackChunk(uint length){
+    MTrk_Chunk trackChunk;
+    trackChunk.length = length;
+    hostToBigEndian(&trackChunk);
+
+    trackChunk.id = ['M', 'T', 'r', 'k'];
+    return trackChunk;
+}
+
+
+
+
+
