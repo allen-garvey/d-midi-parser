@@ -1,6 +1,6 @@
 # D Midi Parser
 
-Midi parser written in D.
+Midi parser written in D. Based on [TurkeyMan's dmidifile.](https://github.com/TurkeyMan/dmidifile)
 
 ## Dependencies
 
